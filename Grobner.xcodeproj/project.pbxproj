@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112E2B48275A763B001BFB44 /* vector.c in Sources */ = {isa = PBXBuildFile; fileRef = 112E2B47275A763B001BFB44 /* vector.c */; settings = {COMPILER_FLAGS = "-mavx2 -mfma"; }; };
 		11BAB3A52757CFA6009BFADA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BAB3A42757CFA6009BFADA /* main.swift */; };
+		11BAB3AC2757D515009BFADA /* Monomial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BAB3AB2757D515009BFADA /* Monomial.swift */; };
+		11BAB3AE275A4A6F009BFADA /* AccTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BAB3AD275A4A6E009BFADA /* AccTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +26,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		112E2B45275A763A001BFB44 /* Grobner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Grobner-Bridging-Header.h"; sourceTree = "<group>"; };
+		112E2B46275A763B001BFB44 /* vector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vector.h; sourceTree = "<group>"; };
+		112E2B47275A763B001BFB44 /* vector.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = vector.c; sourceTree = "<group>"; };
 		11BAB3A12757CFA6009BFADA /* Grobner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Grobner; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BAB3A42757CFA6009BFADA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		11BAB3AB2757D515009BFADA /* Monomial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monomial.swift; sourceTree = "<group>"; };
+		11BAB3AD275A4A6E009BFADA /* AccTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,11 @@
 			isa = PBXGroup;
 			children = (
 				11BAB3A42757CFA6009BFADA /* main.swift */,
+				11BAB3AB2757D515009BFADA /* Monomial.swift */,
+				11BAB3AD275A4A6E009BFADA /* AccTest.swift */,
+				112E2B46275A763B001BFB44 /* vector.h */,
+				112E2B47275A763B001BFB44 /* vector.c */,
+				112E2B45275A763A001BFB44 /* Grobner-Bridging-Header.h */,
 			);
 			path = Grobner;
 			sourceTree = "<group>";
@@ -94,6 +107,7 @@
 				TargetAttributes = {
 					11BAB3A02757CFA6009BFADA = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -120,7 +134,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112E2B48275A763B001BFB44 /* vector.c in Sources */,
 				11BAB3A52757CFA6009BFADA /* main.swift in Sources */,
+				11BAB3AC2757D515009BFADA /* Monomial.swift in Sources */,
+				11BAB3AE275A4A6F009BFADA /* AccTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,10 +260,18 @@
 		11BAB3A92757CFA6009BFADA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5G72LZKFCH;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Grobner/Grobner-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -254,10 +279,17 @@
 		11BAB3AA2757CFA6009BFADA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5G72LZKFCH;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Grobner/Grobner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
